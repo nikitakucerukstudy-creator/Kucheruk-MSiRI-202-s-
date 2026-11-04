@@ -33,7 +33,7 @@ public class tutorial_1 : MonoBehaviour
     void start()
     {
        Balance = 100;
-       print(Owner);
+       print(Owner = "Никита");
        print(GetName());
        print(Balance);
        Deposit(10);
@@ -42,7 +42,7 @@ public class tutorial_1 : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 }
 
