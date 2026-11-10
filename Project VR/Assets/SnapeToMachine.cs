@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class SnapToMachine : MonoBehaviour
+public class SnapeToMachine : MonoBehaviour
 {
     [Header("Настройки привязки")]
     public Transform snapPoint; // Ссылка на пустой объект (Snap Point) на станке
-    public float snapDistance = 1.0f; // Дистанция (в метрах), на которой срабатывает привязка
+    public float snapDistance = 0.3f; // Дистанция (в метрах), на которой срабатывает привязка
     public float snapAngle = 45f; // Допустимый угол отклонения в градусах
 
     private bool isSnapped = false;
@@ -33,15 +33,23 @@ public class SnapToMachine : MonoBehaviour
     {
         isSnapped = true;
 
-        // Мгновенно выставляем позицию и поворот ровно в точку привязки
-        transform.position = snapPoint.position;
-        transform.rotation = snapPoint.rotation;
-
-        // Отключаем физику, чтобы деталь зафиксировалась
+        // Если есть Rigidbody, сбрасываем скорости и перемещаем через физику
         if (rb != null)
         {
+            rb.linearVelocity = Vector3.zero;
+    rb.angularVelocity = Vector3.zero;
+    rb.Sleep();
+
+            rb.MovePosition(snapPoint.position);
+            rb.MoveRotation(snapPoint.rotation);
+
             rb.isKinematic = true;
-            rb.useGravity = false;
+            rb.useGravity = true;
+        }
+        else
+        {
+            transform.position = snapPoint.position;
+            transform.rotation = snapPoint.rotation;
         }
 
         Debug.Log("Деталь успешно привязана к станку!");
