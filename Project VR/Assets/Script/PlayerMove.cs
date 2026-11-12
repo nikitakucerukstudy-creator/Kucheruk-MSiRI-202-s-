@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FreeCamera : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     [Header("Настройки скорости")]
     public float normalSpeed = 10f; // Обычная скорость передвижения
