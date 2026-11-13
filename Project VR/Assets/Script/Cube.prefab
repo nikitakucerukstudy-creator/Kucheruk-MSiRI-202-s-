@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1076998962317392508}
   - component: {fileID: 8326072780496058474}
   - component: {fileID: 850180666082745936}
-  - component: {fileID: -1154595892207765519}
   - component: {fileID: 1908355307114807179}
   - component: {fileID: -3917817295426616713}
   - component: {fileID: 7538136912406877840}
   - component: {fileID: -3379044687713012230}
+  - component: {fileID: 8304609055798353123}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -99,7 +99,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8031007121940036416}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 62bbbd64ad0b9f140b8592a51165e47a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -113,19 +113,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1154595892207765519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8031007121940036416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f811483377d441c4a805919f3c1fd16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachDistance: 1.5
 --- !u!54 &1908355307114807179
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,9 +137,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &-3917817295426616713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,3 +258,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!114 &8304609055798353123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031007121940036416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b649be9209e06a4fbaa4ade507a4f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachDistance: 1.5
